@@ -13,7 +13,7 @@ window = pygame.display.set_mode((window_width, window_height))
 
 # 이미지 로드
 background_image = pygame.image.load("bg_img.png")  # 배경 이미지 파일 경로에 맞게 수정
-coin = pygame.image.load("coin.png")
+coin = pygame.image.load("광산/coin.png")
 wood = pygame.image.load("벌목장/wood.png")
 lumberCamp = pygame.image.load("벌목장/ruin.png")
 
