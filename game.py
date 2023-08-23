@@ -46,6 +46,8 @@ def printText(contents, r, g, b, x, y): # 내용, 색깔(r, g, b), 좌표(x, y)
     text = font.render(contents, True, (r, g, b))
     window.blit(text, (x, y))
 
+# 나중에 클래스로 묶기
+
 # 광산
 def mine():
     global money
@@ -78,7 +80,13 @@ while True:
             pygame.quit()
             sys.exit()
     
+    # 배경
     window.blit(background_image, (background_x, background_y))
+ 
+    # 캐릭터 그리기 사각형
+    pygame.draw.rect(window, (255, 0, 0), (player_x, player_y, 20, 20))
+
+    # 건물
     window.blit(lumberCamp, (camp_x, camp_y))
 
     mine()
@@ -112,9 +120,6 @@ while True:
     if player_y >= 500 and keys[pygame.K_DOWN] and background_y > -1800:
         background_y -= 8
         camp_y -= 8
- 
-    # 캐릭터 그리기 사각형
-    pygame.draw.rect(window, (255, 0, 0), (player_x, player_y, 20, 20))
 
     # 화면 업데이트
     pygame.display.flip()
