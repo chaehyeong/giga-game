@@ -11,8 +11,25 @@ pygame.display.set_caption("2D Pixel-style Game")
 window_width, window_height = 800, 600
 window = pygame.display.set_mode((window_width, window_height))
 
+# 배경 로드
+bg_1 = pygame.image.load("배경/bg_1.jpg")
+bg_2 = pygame.image.load("배경/bg_2.jpg")
+bg_3 = pygame.image.load("배경/bg_3.jpg")
+bg_4 = pygame.image.load("배경/bg_4.jpg")
+bg_5 = pygame.image.load("배경/bg_5.jpg")
+bg_6 = pygame.image.load("배경/bg_6.jpg")
+bg_7 = pygame.image.load("배경/bg_7.jpg")
+bg_8 = pygame.image.load("배경/bg_8.jpg")
+bg_9 = pygame.image.load("배경/bg_9.jpg")
+bg_10 = pygame.image.load("배경/bg_10.jpg")
+bg_11 = pygame.image.load("배경/bg_11.jpg")
+bg_12 = pygame.image.load("배경/bg_12.jpg")
+bg_13 = pygame.image.load("배경/bg_13.jpg")
+bg_14 = pygame.image.load("배경/bg_14.jpg")
+bg_15 = pygame.image.load("배경/bg_15.jpg")
+bg_16 = pygame.image.load("배경/bg_16.jpg")
+
 # 이미지 로드
-background_image = pygame.image.load("bg_img.png")  # 배경 이미지 파일 경로에 맞게 수정
 coin = pygame.image.load("광산/coin.png")
 wood = pygame.image.load("벌목장/wood.png")
 lumberCamp = pygame.image.load("벌목장/ruin.png")
@@ -45,8 +62,6 @@ startTime = time.time()
 def printText(contents, r, g, b, x, y): # 내용, 색깔(r, g, b), 좌표(x, y)
     text = font.render(contents, True, (r, g, b))
     window.blit(text, (x, y))
-
-# 나중에 클래스로 묶기
 
 # 광산
 def mine():
@@ -81,10 +96,22 @@ while True:
             sys.exit()
     
     # 배경
-    window.blit(background_image, (background_x, background_y))
- 
-    # 캐릭터 그리기 사각형
-    pygame.draw.rect(window, (255, 0, 0), (player_x, player_y, 20, 20))
+    window.blit(bg_1, (background_x, background_y))
+    window.blit(bg_2, (background_x + 800, background_y))
+    window.blit(bg_3, (background_x + 1600, background_y))
+    window.blit(bg_4, (background_x + 2400, background_y))
+    window.blit(bg_5, (background_x, background_y + 600))
+    window.blit(bg_6, (background_x + 800, background_y + 600))
+    window.blit(bg_7, (background_x + 1600, background_y + 600))
+    window.blit(bg_8, (background_x + 2400, background_y + 600))
+    window.blit(bg_9, (background_x, background_y + 1200))
+    window.blit(bg_10, (background_x + 800, background_y + 1200))
+    window.blit(bg_11, (background_x + 1600, background_y + 1200))
+    window.blit(bg_12, (background_x + 2400, background_y + 1200))
+    window.blit(bg_13, (background_x, background_y + 1800))
+    window.blit(bg_14, (background_x + 800, background_y + 1800))
+    window.blit(bg_15, (background_x + 1600, background_y + 1800))
+    window.blit(bg_16, (background_x + 2400, background_y + 1800))
 
     # 건물
     window.blit(lumberCamp, (camp_x, camp_y))
@@ -120,6 +147,9 @@ while True:
     if player_y >= 500 and keys[pygame.K_DOWN] and background_y > -1800:
         background_y -= 8
         camp_y -= 8
+ 
+    # 캐릭터 그리기 사각형
+    pygame.draw.rect(window, (255, 0, 0), (player_x, player_y, 20, 20))
 
     # 화면 업데이트
     pygame.display.flip()
