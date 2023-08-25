@@ -141,10 +141,10 @@ while True:
     if player_x >= 700 and keys[pygame.K_RIGHT] and background_x > -2400:
         background_x -= 8
         camp_x -= 8
-    if player_y <= 100 and keys[pygame.K_UP] and background_y < 0:
+    if player_y <= 100 and keys[pygame.K_UP] and background_y < -10:
         background_y += 8
         camp_y += 8
-    if player_y >= 500 and keys[pygame.K_DOWN] and background_y > -1800:
+    if player_y >= 500 and keys[pygame.K_DOWN] and background_y > -1790:
         background_y -= 8
         camp_y -= 8
  
